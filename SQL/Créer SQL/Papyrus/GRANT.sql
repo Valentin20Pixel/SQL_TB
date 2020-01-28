@@ -1,0 +1,10 @@
+USE Papyrus;
+DROP USER 'util1'@'%';
+CREATE USER 'util1'@'%' IDENTIFIED BY '1234';
+GRANT ALL PRIVILEGES ON Papyrus.* TO 'util1'@'%';
+DROP USER 'util2'@'%';
+CREATE USER 'util2'@'%' IDENTIFIED BY '1234';
+GRANT SELECT ON Papyrus.* TO 'util2'@'%';
+DROP USER 'util3'@'%';
+CREATE USER 'util3'@'%' IDENTIFIED BY '1234';
+GRANT SHOW VIEW ON Papyrus.fournis TO 'util3'@'%';
