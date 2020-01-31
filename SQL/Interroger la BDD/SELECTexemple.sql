@@ -1,3 +1,5 @@
+-- SELECT
+/*****************************************************************************/
 -- Ex1 Aff ttes les infos des employé
 USE exemple;
 SELECT * FROM employe;
@@ -13,10 +15,14 @@ nosup,
 nodep,
 salaire
 FROM employe;
+-- Suppression des doublons
+/*****************************************************************************/
 -- Ex4 Aff titre
 SELECT titre FROM employe;
 -- Ex5 Aff les differents titres
 SELECT DISTINCT titre FROM employe;
+-- Restrictions
+/*****************************************************************************/
 -- Ex6 Aff nom et nodep des titre secretaire
 USE exemple;
 SELECT nom,
@@ -28,6 +34,8 @@ SELECT nom,
 nodep
 FROM employe
 WHERE nodep>40;
+-- Restriction en comparant les colonnes entre elles
+/*****************************************************************************/
 -- Ex8 Afficher le nom et le prénom des employés dont le nom est
 -- alphabétiquement antérieur au prénom.
 SELECT nom,
@@ -79,6 +87,8 @@ FROM employe
 WHERE salaire>20000
 AND salaire<30000;
 -- Ex14 Inexistant
+-- Négation, recherche approchée
+/*****************************************************************************/
 -- Ex15 Afficher le nom des employés commençant par la lettre « H ». 
 SELECT nom
 FROM employe
@@ -113,6 +123,8 @@ salaire,
 nom
 FROM employe
 ORDER BY titre, salaire DESC;
+-- Valeurs non renseignées
+/*****************************************************************************/
 -- Ex21 Afficher le taux de commission, le salaire et le nom des employés
 -- classés par taux de commission croissante. 
 SELECT tauxcom,
@@ -155,6 +167,8 @@ titre
 FROM employe
 WHERE tauxcom IS NOT NULL
 AND tauxcom>15;
+-- Expressions arithmétiques
+/*****************************************************************************/
 -- Ex26 Afficher le nom, le salaire, le taux de commission et la commission des
 -- employés dont le taux de commission n'est pas nul. (la commission
 -- est calculée en multipliant le salaire par le taux de commission)
@@ -174,10 +188,14 @@ tauxcom*salaire/100 AS Commission
 FROM employe
 WHERE tauxcom IS NOT NULL
 ORDER BY Commission ASC;
+-- Concaténation
+/*****************************************************************************/
 -- Ex28 Afficher le nom et le prénom (concaténés) des employés. Renommer
 -- les colonnes
 SELECT CONCAT(nom,prenom) AS "identité"
 FROM employe;
+-- Chaînes de caractères
+/*****************************************************************************/
 -- Ex29 Afficher les 5 premières lettres du nom des employés. 
 SELECT SUBSTRING(nom,1,5) AS "4 premiers lettre"
 FROM employe;

@@ -1,4 +1,4 @@
-USE Papyrus;
+﻿USE Papyrus;
 DROP TABLE produit;
 CREATE TABLE produit(
     codart CHAR(4) NOT NULL,
@@ -13,7 +13,7 @@ DROP TABLE fournis;
 CREATE TABLE fournis(
     numfou VARCHAR(25) NOT NULL,
     nomfou VARCHAR(25) NOT NULL,
-    ruefou VARCHAR(25) NOT NULL,
+    ruefou VARCHAR(50) NOT NULL,
     posfou CHAR(5) NOT NULL,
     vilfou VARCHAR(30) NOT NULL,
     confou VARCHAR(15) NOT NULL,
