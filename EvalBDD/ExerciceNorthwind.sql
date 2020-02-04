@@ -92,7 +92,7 @@ SELECT SUM(`order details`.UnitPrice*`order details`.Quantity) AS "Montant Vente
 FROM `order details`
 JOIN orders
 ON `order details`.OrderID=orders.OrderID
-WHERE SUBSTRING(OrderDate,3,2)=97
+WHERE SUBSTRING(OrderDate,3,2)=97;
 
 -- Ex8 – Montant des ventes de 1997 mois par mois :
 
@@ -105,7 +105,7 @@ FROM `order details`
 JOIN orders
 ON `order details`.OrderID=orders.OrderID
 WHERE orders.OrderDate LIKE "1997%"
-GROUP BY Mois97
+GROUP BY Mois97;
 
 -- Ex9 – Depuis quelle date le client « Du monde entier » n’a plus commandé ?
 
@@ -115,7 +115,7 @@ SELECT MAX(OrderDate) AS "Date de derniere commande"
 FROM orders
 JOIN customers
 ON orders.CustomerID=customers.CustomerID
-WHERE customers.CompanyName="Du monde entier"
+WHERE customers.CompanyName="Du monde entier";
 
 -- Ex10 – Quel est le délai moyen de livraison en jours ?
 
@@ -123,4 +123,4 @@ WHERE customers.CompanyName="Du monde entier"
 -- des dates
 
 SELECT DISTINCT ROUND(AVG(DATEDIFF(ShippedDate,OrderDate))) AS "Delai moyen de livraison en jours"
-FROM orders
+FROM orders;
